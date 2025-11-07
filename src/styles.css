@@ -1,0 +1,280 @@
+:root {
+  --bg: #0f1923;
+  --bg-soft: #151f2b;
+  --card: #1e2a38;
+  --text: #eaedef;
+  --muted: #a9b3be;
+  --accent: #ff4655; /* Valorant red */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Layout */
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 24px auto;
+  flex: 1;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px 0 32px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(21, 31, 43, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #223243;
+}
+
+.navbar-inner {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.brand-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+}
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: var(--card);
+  color: var(--accent);
+}
+
+/* Section & Titles */
+.section-title {
+  margin: 6px 0 18px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid #2a3b50;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: var(--bg-soft);
+}
+
+.card-body {
+  padding: 12px 14px 16px;
+}
+
+.card-title {
+  margin: 8px 0 2px;
+  font-weight: 700;
+}
+
+.card-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Search and Filter Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.input, .select {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid #243449;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus, .select:focus {
+  border-color: var(--accent);
+}
+
+/* Detail Page */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.detail-header {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.detail-portrait {
+  width: 100%;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  border: 1px solid #243449;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #233345;
+  border: 1px solid #2b3e55;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.badge:hover {
+  background: #2e4055;
+}
+
+.abilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.ability {
+  background: var(--card);
+  border: 1px solid #2a3b50;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.ability img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: var(--bg-soft);
+  border-radius: 8px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Skeleton loading shimmer */
+.skel {
+  background: linear-gradient(90deg, #1a2634 25%, #223246 37%, #1a2634 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0 }
+  100% { background-position: -100% 0 }
+}
+
+.skel-card {
+  height: 280px;
+  border-radius: 14px;
+  border: 1px solid #2a3b50;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .detail-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2a3b50;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3b4d66;
+}
