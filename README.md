@@ -108,12 +108,7 @@ This repository is **not affiliated with or endorsed by Riot Games** in any way.
 
 You can view the deployed project here:
 
-🔗 **Live Site: https://valorant-agents-mjmi.vercel.app/agents
-
-## Fixing Vercel Deployment
-git add .
-git commit -m "Fix: update README formatting"
-git push
+🔗 **Live Site: https://valorant-agents-qd6v.vercel.app/
 
 
 
