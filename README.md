@@ -110,6 +110,12 @@ You can view the deployed project here:
 
 🔗 **Live Site: https://valorant-agents-mjmi.vercel.app/agents
 
+## Fixing Vercel Deployment
+git add .
+git commit -m "Fix: update README formatting"
+git push
+
+
 
 
 
